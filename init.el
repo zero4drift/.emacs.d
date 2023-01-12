@@ -68,7 +68,8 @@
         (set-face-attribute 'default nil
 			    ;; 11 13 17 19 23
 			    :font (format "%s:pixelsize=%d" "Inconsolata"
-					  18))
+					  (if (= (x-display-pixel-width) 3840)
+					      39 23)))
         ;; chinese font
         (dolist (charset '(kana han symbol cjk-misc bopomofo))
 	  (set-fontset-font (frame-parameter nil 'font) charset
